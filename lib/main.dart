@@ -203,7 +203,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
       print('Response: $response');
 
       final record = response;
-      // نستخدم id أو email أو أي بيانات لخلق محتوى الـ QR
+      // We use id or email or any data to create the QR content
       print('before qrPayload');
       final qrPayload = record['id'];
 
@@ -212,7 +212,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         generatedData = qrPayload.toString();
       });
 
-      // (اختياري) إرسال إيميل أو ticket عبر Function أو خدمة خارجية
+      // Optionally send an email or ticket via Function or external service
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('تم التسجيل بنجاح — انتظر رمز الـ QR')),
       );
